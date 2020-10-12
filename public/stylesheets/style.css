@@ -1,0 +1,76 @@
+.bg-3 {      
+ background-color: #ffffff;	  
+ color: #555555;
+}
+
+.container-fluid {
+ padding-top: 70px;
+ padding-bottom: 70px;
+}
+.navbar {
+ padding-top: 15px;
+ padding-bottom: 15px;
+ border: 0;
+ border-radius: 0;
+ margin-bottom: 0;
+ font-size: 12px;
+ letter-spacing: 5px;
+ }
+
+.navbar-nav li a:hover {
+ color: #1abc9c !important;
+}
+.active>a {
+ color: #1abc9c !important;
+}
+
+body#index h1 {
+   text-align: center;
+  color: white;
+  background-color:black;
+}
+
+body#index a {
+  color: #00B7FF;
+}
+
+footer {	
+  color: #000000;
+  text-align: center;
+  font-size: 12px;
+  font-family: serif;
+}
+
+body#acercade {
+ background-color: #fafafa;
+}
+
+body#acercade div.jumbotrontext-center {
+  background-color: #49986b;
+  text-align: center;
+  font-family: monospace;
+}
+
+body#acercade .jumbotrontext-center h1 {
+  color: #121212;
+}
+
+body#acercade .jumbotrontext-center p {
+  color: #121212;
+}
+
+body#acercade body img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  position: absolute;
+  background-color: #black;
+}
+
+body#acercade .texto p {
+  text-align: center;
+  font-family: monospace;
+}
+
+

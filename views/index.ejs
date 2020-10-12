@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <title>Mi sitio
+   <%= page %>
+  </title>
+  <meta name="active-menu" content="<%= menuId %>">
+	<%- include('partials/head'); %> 
+ </head>
+ 
+ <body id='index' >
+      
+	<%- include('partials/navbar'); %>
+    
+	<div class="jumbotron">
+	  <h1 class="display-4">Hola bienvenido a mi pagina XOXO</h1>
+	  <p class="lead">Este es una pagina sencilla</p>
+	  <hr class="my-4">
+	  <p>Mi primer sitio Sebastian Ramirez con NodeJS.</p>			       
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn More</a>
+	</div>
+         <%- include('partials/footer'); %>
+	 <%- include('partials/script'); %>
+</body>
+ </html>
+
+

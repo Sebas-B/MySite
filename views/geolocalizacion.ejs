@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+ <head>
+  <title>API Geolocalización</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin="">
+  <script src="https://use.fontawesome.com/39d942f213.js"></script>
+  <link rel="stylesheet" href="./stylesheets/styleGeo.css">
+ </head>
+ <body id="geo">
+  <%- include('partials/navbar'); %>
+
+  <div id="map-template">
+  </div>
+
+ <div class="ubicacion">
+   <label for="select-location">Locación:</label>
+   <select name="select-location" id="select-location">
+   <option value="-1">Selecciona una Locacion...</option>
+   <option value="20.914570, -100.743673">Parroquia San Miguel</option>
+   <option value="20.918304, -100.727767">Charco del ingenio</option>
+   <option value="21.157673, -100.932766">Casa Jose Alfredo Jimenez</option>
+   <option value="21.167262, -100.931060">UTNG</option>
+   <option value="40.748433, -73.985656">Empire State</option>
+   <option value="51.507, 0.1275">Londres</option>
+   <option value="35.703653,139.769423">Tokio</option>
+   <option value="-34.586580,-58.431601">Argentina</option>
+ </select>
+ </div>
+
+  <a href="/" class="btn btn-primary btn-sm" role="button">Volver</a>
+
+   <%- include('partials/footer'); %>
+   <%- include('partials/script'); %>
+</body>
+</html>

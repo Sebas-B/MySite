@@ -1,0 +1,23 @@
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) { 
+  res.render('index', { title: 'Mi primera pagina', name:'Sebadtian Ramirez'});
+});
+
+function 
+var nombres = [
+  'Alejandro',
+  'Kevin',
+  'Ramon',
+  'Andrea',
+  'Katia',
+  'Valeria',
+  'Diego',
+  'Jimena',
+  'Carlos',
+  'Itzel'
+];
+
+module.exports = router;
