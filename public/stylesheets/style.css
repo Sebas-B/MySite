@@ -15,24 +15,26 @@
  margin-bottom: 0;
  font-size: 12px;
  letter-spacing: 5px;
+ 
  }
 
-.navbar-nav li a:hover {
- color: #1abc9c !important;
+body#index {
+    background: #B24592;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F15F79, #B24592);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F15F79, #B24592); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-.active>a {
- color: #1abc9c !important;
-}
+
 
 body#index h1 {
    text-align: center;
-  color: white;
-  background-color:black;
+   color: white;
+   background-color:black;
 }
 
-body#index a {
-  color: #00B7FF;
+body#index h2 {
+   text-align: center;
 }
+
 
 footer {	
   color: #000000;
@@ -42,7 +44,9 @@ footer {
 }
 
 body#acercade {
- background-color: #fafafa;
+  background: #ee9ca7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 body#acercade div.jumbotrontext-center {
@@ -65,12 +69,35 @@ body#acercade body img {
   margin-right: auto;
   width: 50%;
   position: absolute;
-  background-color: #black;
-}
+  background-color: black;
+}		    	 
 
 body#acercade .texto p {
   text-align: center;
   font-family: monospace;
 }
 
+body.Compras {
+  background: #FDC830;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body.signup {
+  background: #C6FFDD;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body.signin {
+  background: #bdc3c7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body.twitter {
+   background: #4e54c8;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to bottom, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to bottom, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 

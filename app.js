@@ -8,8 +8,17 @@ var usersRouter = require('./routes/users');
 var acercadeRouter = require('./routes/acercade');
 var geolocalizacionRouter = require('./routes/geolocalizacion');
 var twitterRouter = require('./routes/twitter');
+var comprasRouter = require('./routes/compras');
+var InitiateMongoServer = require('./config/database');
+var bodyParser = require('body-parser');
+
+var MethodOverride = require('method-override');
+var session = require('express-session');
 
 var app = express();
+//Inicializa base de datos
+InitiateMongoServer();
+app.use(bodyParser.json()); //convierte el dato a formato JSON
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,12 +30,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(MethodOverride('_method'));
+app.use(session({
+    secret: 'appsecreta',
+    resave: true,
+    saveUninitialized: true
+}));
+
 //routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/acercade', acercadeRouter);
 app.use('/geolocalizacion', geolocalizacionRouter);
 app.use('/twitter', twitterRouter);
+app.use('/compras', comprasRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
