@@ -1,14 +1,24 @@
-<!-- views/partials/navbar.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <title>
+   <%= page %>
+  </title>                                                                                              
+       <%- include('partials/head'); %>
+ </head>
+
+ <body id='index' >
+       <!-- views/partials/navbar.ejs -->
  <nav class="navbar navbar-expand-lg navbar-light bg-ligth">
-						 
+
 <a class="navbar-brand" href="/">Mi Sitio</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
 </button>
  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-    <li class="nav-item active">      
+    <li class="nav-item active">
  <li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> API´s </a> 													
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> API´s </a>
  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
     <a class="dropdown-item" href="/geolocalizacion">Geolocalización</a>
     <a class="dropdown-item" href="/twitter">Redes sociales</a>
@@ -29,9 +39,29 @@
     <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
    </form>
-	 
-   <a href="/users/signup" class="btn btn-outline-dark"> SIGN UP </a>	
-   <a href="/users/signin" class="btn btn-outline-dark"> SIGN IN </a>						        
+
+    <a href="/users/logout" class="btn btn-danger"> LOG OUT </a>
+
   </div>
   </nav>
+
+
+
+
+        <div class="jumbotron p-3 my-3 bg-dark text-white">
+      <h1 class="display-4">Hola bienvenido a mi pagina XOXO</h1>
+          <h2>"Learning Requires Failure."</h2>
+          <hr class="my-4">
+          <p>Mi primer sitio Sebastian Ramirez con NodeJS.</p>
+         <h2>I see both sides like Chanel</h2>
+          <a class="btn btn-primary btn-lg btn-light"
+
+         href="https://www.instagram.com/sebas_ed_ramirez/" role="button">Instagram</a>
+       </div>
+
+         <%- include('partials/footer'); %>
+         <%- include('partials/script'); %>
+</body> 
+</html>															
+ 
 
