@@ -10,6 +10,8 @@ var geolocalizacionRouter = require('./routes/geolocalizacion');
 var twitterRouter = require('./routes/twitter');
 var comprasRouter = require('./routes/compras');
 var indexsigninRouter = require('./routes/indexsignin');
+var streamRouter = require('./routes/stream');
+var climaRouter = require('./routes/clima');
 var InitiateMongoServer = require('./config/database');
 var bodyParser = require('body-parser');
 
@@ -63,6 +65,8 @@ app.use('/geolocalizacion', geolocalizacionRouter);
 app.use('/twitter', twitterRouter);
 app.use('/compras', comprasRouter);
 app.use('/indexsignin', indexsigninRouter);
+app.use('/stream', streamRouter);
+app.use('/clima', climaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+ <head> 
+  <title>Vimeo player</title> 
+  <meta charset="UTF-8"> 
+  <%- include('partials/head'); %>
+ </head> 
+ <body id='vimeo'>    
+  <%- include('partials/navbar'); %> 
+  <h1>videos</h1> 						     
+  <div class="container-xl p-10 my-20 bg-dark text-white "> 
+   <div class="d-flex justify-content-center m-5 pb-5" data-vimeo-id="179791907" data-vimeo-width="800" id="nikes"> 
+   </div> 
+   <div class="d-flex justify-content-center m-5 pb-5" data-vimeo-id="49091270" data-vimeo-width="800" id="pyramids"> 
+   </div> 
+   <div class="d-flex justify-content-center m-5 pb-5" data-vimeo-id="469965791" data-vimeo-width="800" id="pony"> 
+   </div> 
+   <div class="d-flex justify-content-center m-5 pb-5" data-vimeo-id="325781183" data-vimeo-width="800" id="kombat"> 
+   </div> 
+   <div class="d-flex justify-content-center m-5 pb-5" data-vimeo-id="323292980" data-vimeo-width="800" id="garçons"> 
+   </div> 
+   <div class="d-flex justify-content-center m-5 pb-5" data-vimeo-id="276033195" data-vimeo-width="800" id="street"> 
+   </div> 
+   <div class="d-flex justify-content-center m-5 pb-5" data-vimeo-id="349240908" data-vimeo-width="800" id="artemis"> 
+   </div> 
+   <div class="d-flex justify-content-center m-5 pb-5" data-vimeo-id="397095915" data-vimeo-width="800" id="Bichiyal"> 
+   </div> 
+   <div class="d-flex justify-content-center m-5 pb-5" data-vimeo-id="158953826" data-vimeo-width="800" id="Karma"> 
+   </div> 
+   <div class="d-flex justify-content-center m-5 pb-5" data-vimeo-id="458420009" data-vimeo-width="800" id="SanMike"> 
+   </div> 
+  </div> 
+  <%- include('partials/footer'); %>
+  <%- include('partials/script'); %> 
+  <script src="https://player.vimeo.com/api/player.js"></script> 
+  <script>
+    var video01Player = new Vimeo.Player('Frank Ocean - Nikes');
+    video01Player.on('play', function() {
+      console.log('Played the first video');
+    });
+
+    var video02Player = new Vimeo.Player('Frank Ocean - Pyramids');
+    video02Player.on('play', function() {
+      console.log('Played the second video');
+    });
+    var video03Player = new Vimeo.Player('Kill your idioms');
+    video03Player.on('play', function() {
+      console.log('Played the third video');
+    });
+
+    var video04Player = new Vimeo.Player('Kiddie gang - Mortal Kotbat');
+    video04Player.on('play', function() {
+      console.log('Played the fourth video');
+    });
+    var video05Player = new Vimeo.Player('Frank Ocean - Comme des garçons');
+    video05Player.on('play', function() {
+      console.log('Played the fifth video');
+    });
+
+    var video06Player = new Vimeo.Player('Kamasi Washington - Street Fighter Man');
+    video06Player.on('play', function() {
+      console.log('Played the sixth video');
+    });
+    var video07Player = new Vimeo.Player('Artemis');
+    video07Player.on('play', function() {
+      console.log('Played the seveth video');
+    });
+    var video07Player = new Vimeo.Player('Bad Bunny - Bichiyal');
+    video07Player.on('play', function() {
+      console.log('Played the eighth video');
+    });
+    var video08player = new Vimeo.Player('Ariel Camacho - El karma');
+    video08Player.on('play', function() {
+      console.log('Played the ninerh video');
+    });
+    var video09Player = new Vimeo.Player('San Miguel');
+    video06Player.on('play', function() {
+      console.log('Played the tenth video');
+    });
+  </script> 
+ </body>
+</html>
