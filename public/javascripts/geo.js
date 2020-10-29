@@ -1,3 +1,7 @@
+/*  Nombre del autor: Sebastian Eduardo Ramirez Bocanegra
+           Objetivo de archivo: funcionalidad de la API de geolicalizacion
+       Fecha y hora: 29/10/2020 */
+
 //ubicación donde conenzara el mapa
 const map = L.map('map-template').setView([20.9182539, -100.7601433], 13);
 

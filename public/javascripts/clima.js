@@ -1,3 +1,7 @@
+/*  Nombre del autor: Sebastian Eduardo Ramirez Bocanegra
+           Objetivo de archivo: Funcionalidad de la API de clima
+       Fecha y hora: 29/10/2020 */
+
 const api = {
   key: "168813cdc0029bb273efb252a526badf",
   base: "https://api.openweathermap.org/data/2.5/"

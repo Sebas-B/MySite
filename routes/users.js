@@ -1,3 +1,9 @@
+/*  Nombre del autor: Sebastian Eduardo Ramirez Bocanegra
+           Objetivo de archivo: obtener las paginas de sign in y sign up
+           y poder mostrarlas aparte de hacer la comprobacion con la base de datos
+	   para permitir el acceso o negarlo
+       Fecha y hora: 29/10/2020 */
+
 var express = require('express');
 var router = express.Router();
 
