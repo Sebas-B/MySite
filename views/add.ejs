@@ -1,0 +1,92 @@
+<!-- Nombre del autor: Sebastian Eduardo Ramirez Bocanegra
+       Objetivo de archivo: Mostrar la pagina de inicio, la presebtacion de la pagina
+       Fecha y hora: 29/10/2020 \-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <title>Mi sitio
+  </title>
+    <%- include('partials/head'); %>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+ </head>
+
+ <body id='index' >
+        <%- include('partials/navbar'); %>
+
+    <% if (mensaje) { %>
+      <div class="alert alert-danger" role="alert">
+        <%- mensaje %>
+      </div>
+      <%  } %>
+
+      <div class="card">
+        <div class="card text-white bg-info"> Agregar Ventas </div>
+          <div class="card-body">					       
+            <form action="/ventas/add" method="post">
+              <div class="form-group">
+                <label>Clave de la venta:</label>
+                <input type="number" class="form-control" name="claveVentas" value="<%= claveVentas %>"  autocomplete="off">    
+              </div>
+
+             <div class="form-group"> 
+               <label>Clave del vendedor:</label> 
+                <select type="number" class="form-control" name="claveVendedor" value="<%= claveVendedor %>">	
+                 <option>10001</option>
+                 <option>10002</option>
+                 <option>10003</option> 
+                 <option>10004</option>
+                 <option>10005</option>
+                 <option>10006</option>
+              </select> 
+            </div> 
+   
+           <div class="form-group"> 
+            <label>Clave del Producto:</label> 
+              <select type="number" class="form-control" name="claveProducto" value="<%= claveProducto %>">
+                 <option>21000</option>
+                 <option>22000</option> 
+                 <option>23000</option>
+		 <option>24000</option>
+		 <option>25000</option>
+		 <option>26000</option>
+		 <option>27000</option>
+		 <option>28000</ootion>
+                 <option>30000</option>
+                 <option>40000</option>
+              </select> 
+          </div> 
+
+             <div class="form-group">
+                <label>kilos:</label>				 
+                <input type="number" class="form-control" name="kilos" value="<%= kilos %>" autocomplete="off">
+             </div>
+
+             <div class="form-group">
+                <label>Pagado:</label>
+		<select type="text" class="form-control" name="pagado" value="<%= pagado %>">		      
+                 <option>true</option> 
+                 <option>false</option>
+              </select>
+             </div>
+
+             <div class="form-group">
+                <input type="submit" class="btn btn-info" value="Agregar" />
+             </div>
+          </form>
+       </div>
+    </div>
+
+       <%- include('partials/footer'); %>
+         <%- include('partials/script'); %>
+</body>
+ </html>
+
+ 
+
+
+
+
+
+
+

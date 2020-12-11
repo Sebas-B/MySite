@@ -1,0 +1,94 @@
+<!-- Nombre del autor: Sebastian Eduardo Ramirez Bocanegra
+       Objetivo de archivo: Mostrar la pagina de inicio, la presebtacion de la pagina
+       Fecha y hora: 29/10/2020 \-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <title>Ventas
+    </title>
+  <meta name="active-menu" content="<%= menuId %>">
+        <%- include('partials/head'); %>
+ </head>
+ <body id='index' >
+
+        <%- include('partials/navbar'); %>
+
+   <div class="container">
+     <div class="form-row">
+
+  <div class=" card bg-light mb-3  ">
+    <div class="card-header">	   
+       <ul class="nav nav-pills w-100">
+          <li class="nav pill-active">
+            <a class="nav-link">Listado de ventas</a>
+          </li>	
+          <li class="nav-pill ml-auto">
+            <a class="nav-link active" href="/ventas/add">Agregar</a>	 
+          </li>
+       </ul>
+    </div>
+  </div>
+
+<table id="tablaVentas" class="display table table-dark" style="width:100%">
+			   
+ <thead class="thead-light">
+
+    <tr>		   
+      <th>Clave de Venta</th>
+		    
+       <th>Clave de Vendedor</th> 
+		   
+      <th>Clave de Producto</th>
+
+      <th>Kilos</th>	
+
+      <th>Fecha</th>
+
+      <th>Pagado</th>
+
+ </tr>
+ </thead>
+ <tbody>
+ <% if(data.length > 0){ %>
+    <% for ( var i = 0 ; i < data.length ; i++){ %>
+ <tr>
+ <td>
+     <%= data[i].claveVentas%>
+ </td>			      
+<td>			      
+     <%= data[i].claveVendedor%>
+ </td>		       
+<td>  
+<%= data[i].claveProducto%>
+ </td>
+ <td>		 
+ <%= data[i].kilos%>
+ </td>
+<td>		  
+ <%= data[i].date%>
+ </td>
+<td>	      
+ <%= data[i].pagado%>
+ </td>
+ <td>							     
+<a class="btn btn-warning fa fa-eye view" href="../ventas/view/<%=data[i].claveVentas%>">
+
+<a class="btn btn-success fa fa-pencil-square-o edit" href="../ventas/editar/<%=data[i].claveVentas%>"> </a>												  
+	     
+<a class="btn btn-danger fa fa-trash  delete" onclick="return alert('¿Estas seguro?')" href="../ventas/delete/<%=data[i].claveVentas%>"> </a>
+
+ </td>																				
+ </tr>
+ <% } %>
+ <% } %>
+
+  </tbody>
+ </table>
+</div>
+</div>
+         <%- include('partials/footer'); %>
+         <%- include('partials/script'); %>
+	 <script src="./javascripts/ventas.js"></script>     
+</body>
+ </html>
+
