@@ -1,0 +1,99 @@
+<!-- Nombre del autor: Sebastian Eduardo Ramirez Bocanegra
+       Objetivo de archivo: Mostrar la pagina de inicio, la presebtacion de la pagina
+       Fecha y hora: 29/10/2020 \-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <title>Ventas
+    </title>
+  <meta name="active-menu" content="<%= menuId %>">
+        <%- include('partials/head'); %>
+ </head>
+ <body id='index' >
+
+        <%- include('partials/navbarRegistrados'); %>
+
+   <div class="container">
+     <div class="form-row">
+
+  <div class=" card bg-light mb-3  ">
+    <div class="card-header">
+       <ul class="nav nav-pills w-100">
+          <li class="nav pill-active">
+            <a class="nav-link">Listado de vendores</a>
+          </li>					    
+          <li class="nav-pill ml-auto">
+            <a class="nav-link active" href="/vendedor/addVendedor">Agregar</a> 
+          </li>						    
+       </ul>
+    </div>
+  </div>	
+
+<table id="tablaProductos" class="display table table-dark" style="width:100%">
+
+ <thead class="thead-light">
+
+    <tr>
+      <!-- <th>Id</th> \-->
+
+      <th>Clave de vendedor</th>
+			     
+       <th>Nombres</th>
+		
+      <th>Apellidos</th>
+	         
+      <th>Edad</th>
+		    
+      <th>Genero</th>
+
+      <th>  </th>
+ </tr>
+ </thead>
+ <tbody>
+ <% if(data.length > 0){ %>
+    <% for ( var i = 0 ; i < data.length ; i++){ %>
+ <tr>
+
+<!--
+ <td>
+   <%= data[i]._id%>
+ </td>
+\-->
+
+ <td>			      
+     <%= data[i].claveVendedor%>
+ </td>
+<td>			       
+     <%= data[i].nombre%>
+ </td>
+<td>		    
+  <%= data[i].apellidos%>
+ </td>
+ <td>		  
+ <%= data[i].edad%>
+ </td>
+<td>		       
+ <%= data[i].genero%>
+ </td>
+ <td>
+
+<a class="btn btn-warning fa fa-eye view" href="../vendedor/viewVendedor/<%=data[i].claveVendedor%>">
+		
+<a class="btn btn-success fa fa-pencil-square-o edit" href="../vendedor/editarVendedor/<%=data[i].claveVendedor%>"> </a>
+										     
+<a class="btn btn-danger fa fa-trash  delete" onclick="return alert('¿Estas seguro?')" href="../vendedor/deleteVendedor/<%=data[i]._id%>"> </a>
+
+ </td>
+ </tr>
+ <% } %>
+ <% } %>
+
+  </tbody>
+ </table>
+</div>
+</div>
+         <%- include('partials/footer'); %>
+         <%- include('partials/script'); %>
+         <script src="./javascripts/ventas.js"></script>
+</body>
+ </html>

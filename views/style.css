@@ -1,0 +1,121 @@
+/*  Nombre del autor: Sebastian Eduardo Ramirez Bocanegra
+           Objetivo de archivo: estilos de casi todas las paginas del proyecto
+       Fecha y hora: 29/10/2020 */						
+.bg-3 {      
+ background-color: #ffffff;	  
+ color: #555555;
+}
+
+.container-fluid {
+ padding-top: 70px;
+ padding-bottom: 70px;
+}
+.navbar {
+ padding-top: 15px;
+ padding-bottom: 15px;
+ border: 0;
+ border-radius: 0;
+ margin-bottom: 0;
+ font-size: 12px;
+ letter-spacing: 5px;
+ 
+ }
+
+body#index {
+    background: #B24592;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F15F79, #B24592);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F15F79, #B24592); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+body#index h1 {
+   text-align: center;
+   color: white;
+   background-color:black;
+}
+
+body#index h2 {
+   text-align: center;
+}
+
+
+footer {	
+  color: #000000;
+  text-align: center;
+  font-size: 12px;
+  font-family: serif;
+}
+
+body#acercade {
+  background: #9796f0;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body#acercade div.jumbotrontext-center {
+  background-color: #49986b;
+  text-align: center;
+  font-family: monospace;
+}
+
+body#acercade .jumbotrontext-center h1 {
+  color: #121212;
+}
+
+body#acercade .jumbotrontext-center p {
+  color: #121212;
+}
+
+body#acercade .div img {	
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  position: absolute;
+  background-color: black;
+}		    	 
+
+body#acercade .texto p {
+  text-align: center;
+  font-family: monospace;
+}
+
+body.Compras {
+  background: #FDC830;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body.signup {
+  background: #C6FFDD;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body.signin {
+  background: #9796f0;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body.twitter {
+   background: #4e54c8;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to bottom, #8f94fb, #4e54c8);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to bottom, #8f94fb, #4e54c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+body.signin .logo { 
+   width: 30%;
+}
+
+body#vimeo { 
+   background: #E55D87;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #5FC3E4, #E55D87);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #5FC3E4, #E55D87); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body#vimeo h1{
+  text-align: center;
+  color: white;
+  background-color:black;
+ }
+ 

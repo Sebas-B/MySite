@@ -8,7 +8,7 @@ var request = require('request');
 
 /* LISTADO DE VENTAS. */
 router.get('/', function(req, res, next) {
-  request.get("https://nopedipermiso-crud.herokuapp.com/ventas", (error, response, body) => {
+  request.get("https://nopedipermiso-crud.herokuapp.com/vendedor", (error, response, body) => {
    mensaje= '';
 
   if(error) { //En caso de que surja un error
@@ -17,14 +17,14 @@ router.get('/', function(req, res, next) {
   }
   console.log(JSON.parse(body));
   //Enviamos la informacion a la vista eb formato JSON
-  res.render('ventas', {page:'Crud', menuId:'crud', mensaje: mensaje, data: JSON.parse(body)
+  res.render('vendedor', {page:'Crud', menuId:'crud', mensaje: mensaje, data: JSON.parse(body)
 });
 });
 });
 
 //Mostar ppr ID
-router.get('/view/:claveVentas', async function(req, res, next) {
-  request.get("https://nopedipermiso-crud.herokuapp.com/ventas/:claveVentas", (error, response, body) => {
+router.get('/viewVendedor/:claveVendedor', async function(req, res, next) {
+  request.get("https://nopedipermiso-crud.herokuapp.com/vendedor/:claveVendedor", (error, response, body) => {
    mensaje= 'Viendo unico registro';
 
   if(error) { //En caso de que surja un error
@@ -33,7 +33,7 @@ router.get('/view/:claveVentas', async function(req, res, next) {
   }
   console.log(JSON.parse(body));
   //Enviamos la informacion a la vista eb formato JSON
-  res.render('view', {page:'Crud', menuId:'crud', mensaje: mensaje, data: JSON.parse(body)
+  res.render('viewVendedor', {page:'Crud', menuId:'crud', mensaje: mensaje, data: JSON.parse(body)
 });
 });
 });
@@ -41,68 +41,63 @@ router.get('/view/:claveVentas', async function(req, res, next) {
 
 //AGREGAR REGISTRO
 //pantalla para agregar registro
-router.get('/add', function(req, res)  {
+router.get('/addVendedor', function(req, res)  {
    mensaje = "Agregando registro";
 
   //Desplegar pantalla para la captura del registro
-  res.render('add', {
+  res.render('addVendedor', {
     mensaje: mensaje,
     title: "Agregar una venta",  //Titull de la pagina
-    claveVentas: '',
     claveVendedor: '',
-    claveProducto: '',
-    kilos: '',
-    pagado: ''
+    nombre: '',
+    apellidos: '',
+    edad: '',
+    genero: ''
  });
 });
 
 // Agregando un nuevo estudiante a través del Microservicio
-router.post('/add', function(req, res, next) {
+router.post('/addVendedor', function(req, res, next) {
  //Extrae los datos enviados por la forma
- let claveVentas = req.body.claveVentas;
  let claveVendedor = req.body.claveVendedor;
- let claveProducto = req.body.claveProducto;
- let kilos = req.body.kilos;
- let date = req.body.date;
- let pagado = req.body.pagado;
+ let nombre = req.body.nombre;
+ let apellidos = req.body.apellidos;
+ let edad = req.body.edad;
+ let genero = req.body.genero;
  let errors = false;
  // Si no hay errores
  if (!errors) {
  //Encapsula datos de la forma
      var datosForma = {
-     claveVentas: claveVentas,
      claveVendedor: claveVendedor,
-     claveProducto: claveProducto,
-     kilos: kilos,
-     date: date,
-     pagado: pagado
+     nombre: nombre,
+     apellidos: apellidos,
+     edad: edad,
+     genero: genero
  }
 
  //Invoca al Microservicios
- request.post({ url: "https://nopedipermiso-crud.herokuapp.com/ventas", json: datosForma }, (error, response, body) => {
+ request.post({ url: "https://nopedipermiso-crud.herokuapp.com/vendedor", json: datosForma }, (error, response, body) => {
      mensaje = 'El dato se ha agregado con éxito';
      if (error) {
         console.log(error);
         mensaje = 'Error: ' + error;
       }
         console.log(response);
-         res.redirect('/ventas'); //Redirige a Listado de Ventas
+         res.redirect('/vendedor'); //Redirige a Listado de Ventas
  });
  }
 });
 
-
-
 //EDITAR REGISTRO
-router.get('/editar/:claveVentas', (req, res) => {
-   claveVentas = req.params.claveVentas;
-   mensaje= 'Modificar registro' + claveVentas;
+router.get('/editarVendedor/:claveVendedor', (req, res) => {
+   claveVendedor = req.params.claveVendedor;
+   mensaje= 'Modificar registro' + claveVendedor;
    console.log(mensaje);
 
-  var ventasFind;
+  var vendedorFind;
   //Buscar si la venta existe  con su numero de control
-
-  URI = "https://nopedipermiso-crud.herokuapp.com/ventas/"+claveVentas;
+  URI = "https://nopedipermiso-crud.herokuapp.com/vendedor/"+claveVendedor;
   console.log('URI: ' + URI)
   request.get(URI, (error, response, body) => {
 
@@ -112,35 +107,32 @@ router.get('/editar/:claveVentas', (req, res) => {
       mensaje = 'Error: ' + error;
   }
 
- console.log("Venta Encontrada ===>");
+ console.log("Vendedor Encontrada ===>");
  console.log(body);
 
 //Desplega pantalla para modificar de estudiante
-res.render('editar', {
+res.render('editarVendedor', {
     mensaje: mensaje,
     title: "Modicando Estudiantes",  //Titull de la pagina
-    claveVentas: JSON.parse(body).claveVentas,
     claveVendedor: JSON.parse(body).claveVendedor,
-    claveProducto: JSON.parse(body).claveProducto,
-    kilos: JSON.parse(body).kilos,
-    date: JSON.parse(body).date,
-    pagado: JSON.parse(body).pagado
+    nombre: JSON.parse(body).nombre,
+    apellidos: JSON.parse(body).apellidos,
+    edad: JSON.parse(body).edad,
+    genero: JSON.parse(body).genero
  });
 });
 
 });
 
-
 // Modificando un nuevo estudiante a través del Microservicio
-router.post('/editar', function(req, res, next) {
-
+router.post('/editarVendedor', function(req, res, next) {
  console.log('Modificando una venta');
  //Extrae los datos enviados por la forma
- let claveVentas = req.body.claveVentas;
-
- let kilos = req.body.kilos;
-
- let pagado = req.body.pagado;
+ let claveVendedor = req.body.claveVendedor;
+ let nombre = req.body.nombre;
+ let apellidos = req.body.apellidos;
+ let edad = req.body.edad;
+ let genero = req.body.genero;
 
  let errors = false;
 
@@ -148,15 +140,15 @@ router.post('/editar', function(req, res, next) {
  if (!errors) {
  //Encapsula datos provenientes de la forma
  var datosForma = {
- claveVentas: claveVentas,
-
- kilos: kilos,
-
- pagado: pagado
+ claveVendedor: claveVendedor,
+ nombre: nombre,
+ apellidos: apellidos,
+ edad: edad,
+ genero: genero
  }
 
- //Invoca al Microservicio de modificar
- request.put({ url: "https://nopedipermiso-crud.herokuapp.com/ventas", json: datosForma },
+//Invoca al Microservicio de modificar
+ request.put({ url: "https://nopedipermiso-crud.herokuapp.com/vendedor", json: datosForma },
  (error, response, body) => {
  mensaje = 'El dato se ha modificado con éxito';
  if (error) {
@@ -164,20 +156,20 @@ router.post('/editar', function(req, res, next) {
  mensaje = 'Error: ' + error;
  }
  console.log(response);
- res.redirect('/ventas'); //Redirige a Listado de Estudiantes
+ res.redirect('/vendedor'); //Redirige a Listado de Estudiantes
  });
  }
 });
 
 //Metodo DELETE
-router.get('/delete/:claveVentas', (req, res) => {
- claveVentas = req.params.claveVentas;
- mensaje = 'Eliminando ventas con la clave del ventas' + claveVentas;
- console.log(mensaje); 
+router.get('/deleteVendedor/:claveVendedor', (req, res) => {
+ claveVendedor = req.params.claveVendedor;
+ mensaje = 'Eliminando ventas con la clave del vendedor' + claveVendedor;
+ console.log(mensaje);
 
- if (claveVentas) {
+ if (claveVendedor) {
     //Invoca al Microservicio
-    URI = "https://nopedipermiso-crud.herokuapp.com/ventas/" + claveVentas;
+    URI = "https://nopedipermiso-crud.herokuapp.com/vendedor/" + claveVendedor;
     request.delete(URI, (error, response, body) => {
     mensaje = 'El dato se ha eliminado con éxito';
  if (error) {
@@ -185,14 +177,10 @@ router.get('/delete/:claveVentas', (req, res) => {
     mensaje = 'Error: ' + error;
 }
     console.log(response);
-    res.redirect('/ventas'); //Redirige a Listado de Estudiantes
-  });  
+    res.redirect('/vendedor'); //Redirige a Listado de Estudiantes
+  });
  }
 });
 
 module.exports = router;
-
-
-
-
 

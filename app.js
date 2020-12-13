@@ -13,6 +13,8 @@ var indexsigninRouter = require('./routes/indexsignin');
 var streamRouter = require('./routes/stream');
 var climaRouter = require('./routes/clima');
 var ventasRouter = require('./routes/ventas');
+var productosRouter = require('./routes/productos');
+var vendedorRouter = require('./routes/vendedor');
 var InitiateMongoServer = require('./config/database');
 var bodyParser = require('body-parser');
 
@@ -69,6 +71,8 @@ app.use('/indexsignin', indexsigninRouter);
 app.use('/stream', streamRouter);
 app.use('/clima', climaRouter);
 app.use('/ventas', ventasRouter);
+app.use('/productos', productosRouter);
+app.use('/vendedor', vendedorRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

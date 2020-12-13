@@ -1,0 +1,61 @@
+<!-- Nombre del autor: Sebastian Eduardo Ramirez Bocanegra
+ Objetivo de archivo: Mostrar la pagina de inicio, la presebtacion de la pagina
+       Fecha y hora: 29/10/2020 \-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <title>Mi sitio
+  </title>
+    <%- include('partials/head'); %>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+ </head>
+
+ <body id='index' >
+        <%- include('partials/navbar'); %>
+
+    <% if (mensaje) { %>
+      <div class="alert alert-danger" role="alert">
+        <%- mensaje %>
+      </div>
+      <%  } %>
+
+      <div class="card">
+        <div class="card text-white bg-info"> Busqueda por clave de vendedor </div> 
+          <div class="card-body">
+             <form>
+
+              <div class="form-group">					
+                <label>Clave de vendedor:</label>					
+                <input type="number" class="form-control" value="<%= data.claveVendedor %>" readonly>
+              </div>
+
+              <div class="form-group">			
+                 <label>Nombre del vendedor:</label>		       
+                 <input type="text" class="form-control" value="<%= data.nombre %>" readonly>
+              </div>
+
+              <div class="form-group">		
+                 <label>Apellidos:</label>
+                 <input type="text" class="form-control" value="<%= data.apellidos %>" readonly>
+              </div>		    
+             <div class="form-group">
+                <label>Edad:</label> 
+                <input type="number" class="form-control"  value="<%= data.edad %>" readonly>
+             </div>
+             <div class="form-group">
+                <label>Genero:</label>
+                <input type="genero" class="form-control"  value="<%= data.genero %>" readonly >
+             </div>		 
+
+             <div class="form-group">
+                <a class="btn btn-dark" href="/vendedor"> Volver </a>
+             </div>					
+          </form>
+       </div>
+    </div>
+
+       <%- include('partials/footer'); %>
+       <%- include('partials/script'); %>
+ </body>
+ </html>

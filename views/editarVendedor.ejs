@@ -1,0 +1,70 @@
+<!-- Nombre del autor: Sebastian Eduardo Ramirez Bocanegra
+       Objetivo de archivo: Mostrar la pagina de inicio, la presebtacion de la pagina
+       Fecha y hora: 29/10/2020 \-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+  <title>Mi sitio
+  </title>
+       <%- include('partials/head'); %>
+    <link rel="stylesheet" href="../stylesheets/style.css">
+ </head>
+
+ <body id='index' >
+        <%- include('partials/navbarRegistrados'); %>
+
+    <% if (mensaje) { %>
+      <div class="alert alert-danger" role="alert">
+        <%- mensaje %>
+      </div>
+      <%  } %>
+
+  <div class="card">
+     <div class="card-header">
+          Modificando productos
+    </div>
+
+    <div class="card-body">
+     <form action="/vendedor/editarVendedor" method="post">
+			            
+             <div class="form-group">   
+                <label>Clave de Vendedor:</label>
+                <input type="number" class="form-control" name="claveVendedor" value="<%= claveVendedor %>" autocomplete="off" readonly>
+              </div>										       
+
+              <div class="form-group">    
+                 <label>Nombre del vendedor:</label>
+                 <input type="text" class="form-control" name="nombre"  value="<%= nombre %>" autocomplete="off" required>
+              </div>													  
+
+             <div class="form-group">
+                 <label>Apellido del vendedor:</label>
+                 <input type="text" class="form-control" name="apellidos" value="<%= apellidos %>" autocomplete="off" required>
+              </div>												      
+													
+             <div class="form-group"> 
+                 <label>edad:</label>	 
+                 <input type="number" class="form-control" name="edad"  value="<%= edad %>" autocomplete="off" required>
+             </div>
+
+            <div class="form-group">	 
+                <label>Genero:</label>
+                <select type="text" class="form-control" name="genero" value="<%= genero %>" autocomplete="off" required>
+                <option>masculino</option>
+                 <option>femenino</option>
+               </select>
+             </div>
+
+        <div class="form-group">
+          <input type="submit" class="btn btn-danger" value="Editar" />
+         <a href="/vendedor" class="btn btn-dark" >Volver</a>
+      </div>
+  </form>
+     </div>
+</div>
+
+         <%- include('partials/footer'); %>
+         <%- include('partials/script'); %>
+</body>
+ </html>
