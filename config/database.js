@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 // Copia la URL del sitio de mongo DB
-const MONGOURI = "mongodb+srv://test:1234@cluster0.zrgp9.mongodb.net/AWOS?retryWrites=true&w=majority";
+const MONGOURI = "mongodb+srv://test:1234@cluster0.zrgp9.mongodb.net/AppWeb4?retryWrites=true&w=majority";
 
 const InitiateMongoServer = async() => {
  try {
